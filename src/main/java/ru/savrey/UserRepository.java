@@ -21,7 +21,8 @@ public class UserRepository {
     }
 
     public void allLogoutExceptAdmin() {
-        data.stream().filter(it -> !it.isAdmin()).forEach(it -> data.remove(it));
+        //data.stream().filter(it -> !it.isAdmin()).forEach(it -> data.remove(it));
+        data.removeIf(user -> !user.isAdmin());
     }
 
     public List<User> getData() {
